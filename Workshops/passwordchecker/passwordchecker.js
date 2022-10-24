@@ -11,7 +11,7 @@
 let password;
 // password = "password"; // inte giltigt
 // password = "pa$sword"; // giltigt
- password = "p@ssw%rd"; // giltigt
+password = "p@ssw%rd"; // giltigt
 // password = "pa$$word"; // giltigt
 // password = "secretpassword"; // inte giltigt
 // password = "secret-password"; // giltigt
@@ -31,7 +31,7 @@ const ifSpecialChars = thePassword => {
     // Skapar en for-loop som går igenom Arrayns alla tecken.
     for (let i = 0; i < specialChars.length; i++) {
         //Om Password har något av tecknen som finns i Arrayn - gå in i If-satsen.
-        if (thePassword.includes(specialChars[i])) {
+        if (specialChars.includes(thePassword[i])) {
             //Addera 1 till cNumber varje gång ett tecken finns.
             cNumber++;
             console.log(cNumber);
