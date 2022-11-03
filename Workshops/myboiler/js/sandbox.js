@@ -1,1 +1,2 @@
-// My JS code - boiler
+// My code
+
