@@ -32,6 +32,10 @@
 
 // Min lösning:
 
+// Notering till mig själv: Att använda och kalla på egen funktion (som min lösning bygger på) bör undvikas.
+// I det här fallet hade det varit enklare med en while-loop eller do-while (för hantering av Highscore).
+// Om tid ges eller om jag vill träna. Skriv om nedan.
+
 // Sätter alla variabler globalt med ett startvärde.
 let randNum = randomNumber();
 let playedGames = 0;
