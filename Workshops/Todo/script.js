@@ -44,12 +44,10 @@ const completedEl = document.querySelector('#completed');
 
 // Function to put completed task in a new list
 const showCompleted = () => {
-	console.log("show completed");
 
 	completedEl.innerHTML = ``;
 
 	const completedItem = todos.filter(item => item.completed === true);
-	console.log ("completed: ", completedItem);
 
 	completedItem.forEach(compItem => {
 		const coEl = document.createElement('li');
@@ -69,7 +67,6 @@ const todoList = () => {
 	console.log("Not completed: ", notCompleted);
 
 	notCompleted.forEach(todoItem => {
-		
 		// Create the li element
 		const liEl = document.createElement('li');
 		liEl.className = 'list-group-item';
@@ -86,29 +83,18 @@ newTodoFormEl.addEventListener('submit', (e) =>{
 	
 	e.preventDefault();
 	
-	console.log('Pushing the button');
-
 	const newTodoItem = newTodoFormEl.newTodo.value;
-	console.log(newTodoItem);
-
 	todos.push( { title: newTodoItem, completed: false });
 
 	newTodoFormEl.newTodo.value = ``;
 
 	todoList();
-
 });
 
 todosEl.addEventListener('click', (e) => {
-	console.log(e.target.textContent);
 
 	const selectItem = todos.find(({ title }) => title === e.target.textContent);
-	console.log(selectItem);
-
 	selectItem.completed = true;
-	
-	console.log(todos);
 
 	showCompleted();
-
 })
