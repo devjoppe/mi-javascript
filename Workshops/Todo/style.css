@@ -5,4 +5,9 @@
 	font-style: italic;
 	text-decoration: line-through;
 	color: #888;
+	cursor: auto;
+}
+
+li {
+	cursor: pointer;
 }

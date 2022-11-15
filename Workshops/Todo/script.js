@@ -21,34 +21,54 @@
 const todos = [
 	{
 		title: "Learn basic JavaScript",
-		completed: false,
+		completed: false
 	},
 	{
 		title: "Learn DOM",
-		completed: false,
+		completed: false
 	},
 	{
 		title: "Take over the world",
-		completed: false,
+		completed: false
 	},
 	{
 		title: "Take over the universe",
-		completed: false,
-	},
+		completed: false
+	}
 ];
 
 // get references to DOM elements
 const todosEl = document.querySelector('#todos');
 const newTodoFormEl = document.querySelector('#new-todo-form');
+const completedEl = document.querySelector('#completed');
 
-const todoList = () => {
-	
+// Function to put completed task in a new list
+const showCompleted = () => {
+	console.log("show completed");
+
+	completedEl.innerHTML = ``;
+
+	const completedItem = todos.filter(item => item.completed === true);
+	console.log ("completed: ", completedItem);
+
+	completedItem.forEach(compItem => {
+		const coEl = document.createElement('li');
+		coEl.className = 'list-group-item completed';
+		coEl.textContent = compItem.title;
+		completedEl.append(coEl);
+	});
+	todoList();
+}
+
+// Function to render the list
+const todoList = () => {	
 	// Clear the DOM and renders the list
 	todosEl.innerHTML = ``;
 
-	todos.forEach(todoItem => {
-		
-		console.log('SKRIVER: ', todoItem.title);
+	const notCompleted = todos.filter(item => item.completed === false);
+	console.log("Not completed: ", notCompleted);
+
+	notCompleted.forEach(todoItem => {
 		
 		// Create the li element
 		const liEl = document.createElement('li');
@@ -73,6 +93,8 @@ newTodoFormEl.addEventListener('submit', (e) =>{
 
 	todos.push( { title: newTodoItem, completed: false });
 
+	newTodoFormEl.newTodo.value = ``;
+
 	todoList();
 
 });
@@ -86,5 +108,7 @@ todosEl.addEventListener('click', (e) => {
 	selectItem.completed = true;
 	
 	console.log(todos);
+
+	showCompleted();
 
 })
