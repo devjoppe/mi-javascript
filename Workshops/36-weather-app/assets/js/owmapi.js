@@ -1,5 +1,10 @@
 /**
+<<<<<<< HEAD
  * OpenWeatherMap API
+=======
+ * 🌧️.
+ * https://api.openweathermap.org/data/2.5/weather?q=Malmö&units=metric&appid=MYAPI
+>>>>>>> 46a8fbe9fc88ea6e3b5e0064d516553d8bc0d5e0
  */
 
 const API_KEY = "72387e8d3ae2acd855807a4d77bac3b7";
